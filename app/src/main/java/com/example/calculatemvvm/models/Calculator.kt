@@ -29,7 +29,7 @@ class Calculator(firstValue: Float, secondValue: Float) {
         operator = Operator.DIVINE
     }
 
-    fun modulo(){
+    fun modulo() {
         operator = Operator.MODULE
 
     }
@@ -51,7 +51,7 @@ class Calculator(firstValue: Float, secondValue: Float) {
             Operator.MODULE -> return firstValue.rem(secondValue)
             Operator.SQUARE_ROOT -> return sqrt(firstValue)
             Operator.MULTIPLICATION -> return firstValue * secondValue
-            else -> return firstValue
+            else -> return secondValue
         }
     }
 

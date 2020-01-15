@@ -1,7 +1,7 @@
 package com.example.calculatemvvm.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -16,11 +16,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val activityGameBinding: ActivityMainBinding =
-            DataBindingUtil.setContentView(this,
+            DataBindingUtil.setContentView(
+                this,
                 R.layout.activity_main
             )
         calculatorViewModel = ViewModelProviders.of(this).get(CalculatorViewModel::class.java)
-        calculatorViewModel.getKetQuaCuoi().observe(this, Observer { txt_kq.text ="$it" })
+        calculatorViewModel.getKetQuaCuoi().observe(this, Observer { txt_kq.text = "$it" })
         activityGameBinding.calculatorViewModel = calculatorViewModel
     }
 }
